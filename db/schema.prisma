@@ -63,3 +63,29 @@ model Token {
 // enum TokenType {
 //   RESET_PASSWORD
 // }
+
+model Question {
+  id               Int                @id @default(autoincrement())
+  createdAt        DateTime           @default(now())
+  updatedAt        DateTime           @updatedAt
+  text             String
+  choices          Choice[]
+  Question_version Question_version[]
+}
+
+model Choice {
+  id         Int      @id @default(autoincrement())
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  text       String
+  votes      Int      @default(0)
+  question   Question @relation(fields: [questionId], references: [id])
+  questionId Int
+}
+
+model Question_version {
+  question   Question @relation(fields: [questionId], references: [id])
+  questionId Int
+  effective  DateTime @id @default(now())
+  text       String
+}
