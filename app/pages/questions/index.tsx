@@ -9,7 +9,7 @@ export const QuestionsList = () => {
   const router = useRouter()
   const page = Number(router.query.page) || 0
   const [{ questions, hasMore }] = usePaginatedQuery(getQuestions, {
-    orderBy: { id: "asc" },
+    orderBy: { questionId: "asc" },
     skip: ITEMS_PER_PAGE * page,
     take: ITEMS_PER_PAGE,
   })

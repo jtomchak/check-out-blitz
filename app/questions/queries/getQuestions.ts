@@ -2,7 +2,7 @@ import { paginate, resolver } from "blitz"
 import db, { Prisma } from "db"
 
 interface GetQuestionsInput
-  extends Pick<Prisma.QuestionFindManyArgs, "where" | "orderBy" | "skip" | "take"> {}
+  extends Pick<Prisma.Question_versionFindManyArgs, "where" | "orderBy" | "skip" | "take"> {}
 
 export default resolver.pipe(
   resolver.authorize(),
@@ -16,9 +16,14 @@ export default resolver.pipe(
     } = await paginate({
       skip,
       take,
-      count: () => db.question.count({ where }),
+      count: () => db.question_version.count({ where }),
       query: (paginateArgs) =>
-        db.question.findMany({ ...paginateArgs, where, orderBy, include: { choices: true } }),
+        db.question_version.findMany({
+          ...paginateArgs,
+          where,
+          orderBy,
+          include: { choices: true },
+        }),
     })
 
     return {

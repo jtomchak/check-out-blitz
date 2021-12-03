@@ -69,23 +69,22 @@ model Question {
   createdAt        DateTime           @default(now())
   updatedAt        DateTime           @updatedAt
   text             String
-  choices          Choice[]
   Question_version Question_version[]
 }
 
 model Choice {
-  id         Int      @id @default(autoincrement())
-  createdAt  DateTime @default(now())
-  updatedAt  DateTime @updatedAt
+  id         Int              @id @default(autoincrement())
+  createdAt  DateTime         @default(now())
+  updatedAt  DateTime         @updatedAt
   text       String
-  votes      Int      @default(0)
-  question   Question @relation(fields: [questionId], references: [id])
-  questionId Int
+  votes      Int              @default(0)
+  question   Question_version @relation(fields: [questionId], references: [effective])
+  questionId DateTime
 }
 
 model Question_version {
   question   Question @relation(fields: [questionId], references: [id])
   questionId Int
   effective  DateTime @id @default(now())
-  text       String
+  choices    Choice[]
 }

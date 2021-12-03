@@ -19,7 +19,7 @@ const NewQuestionPage: BlitzPage = () => {
         onSubmit={async (values) => {
           try {
             const question = await createQuestionMutation(values)
-            router.push(Routes.ShowQuestionPage({ questionId: question.id }))
+            router.push(Routes.ShowQuestionPage({ questionId: question.questionId }))
           } catch (error: any) {
             console.error(error)
             return {
