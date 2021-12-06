@@ -57,6 +57,9 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 1. Edit those Choices will generate a new version of that question.
 
-## Environment Variables
+1. `yarn studio` will load the prisma studio at http://localhost:5555 and let you browse the data tables
 
-Ensure the `.env.local` file has required environment variables:
+### Resources
+
+[Version Normal Form or Temporal DB Design](https://www.dropbox.com/s/8hnkzet6fueblz7/TemporalDBDesign.pdf?dl=0)
+[Bi-temporal rdbms 2014](https://www.slideshare.net/TommCarr/bitemporal-rdbms-2014)
