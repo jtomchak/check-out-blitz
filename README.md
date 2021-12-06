@@ -61,5 +61,5 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ### Resources
 
-[Version Normal Form or Temporal DB Design](https://www.dropbox.com/s/8hnkzet6fueblz7/TemporalDBDesign.pdf?dl=0)
-[Bi-temporal rdbms 2014](https://www.slideshare.net/TommCarr/bitemporal-rdbms-2014)
+- [Version Normal Form or Temporal DB Design](https://www.dropbox.com/s/8hnkzet6fueblz7/TemporalDBDesign.pdf?dl=0)
+- [Bi-temporal rdbms 2014](https://www.slideshare.net/TommCarr/bitemporal-rdbms-2014)
