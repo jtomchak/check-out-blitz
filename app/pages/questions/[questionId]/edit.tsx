@@ -36,6 +36,7 @@ export const EditQuestion = () => {
           // schema={UpdateQuestion}
           initialValues={question}
           onSubmit={async (values) => {
+            console.log(">>SUBMIT VALUES", values)
             try {
               const updated = await updateQuestionMutation({
                 id: question.id,

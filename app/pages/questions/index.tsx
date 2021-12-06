@@ -26,11 +26,10 @@ export const QuestionsList = () => {
               <a>{question.text}</a>
             </Link>
             <ul>
-              {question.choices.map((c) => (
-                <li key={c.id}>
-                  {c.text} - {c.votes} votes
-                </li>
-              ))}
+              {question?.choices &&
+                question.choices.map((c) => {
+                  return <li key={c.id}>{c.text}</li>
+                })}
             </ul>
           </li>
         ))}
