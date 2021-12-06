@@ -12,7 +12,6 @@ export default resolver.pipe(
   resolver.zod(UpdateQuestion),
   resolver.authorize(),
   async ({ id, ...data }) => {
-    console.log(">>>Question Data", data)
     // TODO: in multi-tenant app, you must add validation to ensure correct tenant
     const question_version = await db.question_version.create({
       data: { questionId: id, choices: { create: data.choices } },
