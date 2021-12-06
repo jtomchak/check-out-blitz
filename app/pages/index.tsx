@@ -53,8 +53,13 @@ const UserInfo = () => {
 const Home: BlitzPage = () => {
   return (
     <div>
-      <h1>Hello, world!</h1>
-
+      <h1>Hello, welcome to versions!</h1>
+      <Link href={Routes.QuestionsPage()}>
+        <a className="button small">
+          <strong>Questions</strong>
+        </a>
+      </Link>
+      <br />
       <Suspense fallback="Loading...">
         <UserInfo />
       </Suspense>
